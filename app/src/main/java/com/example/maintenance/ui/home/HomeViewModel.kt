@@ -8,7 +8,7 @@ import com.example.maintenance.R
 class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Aircraft"
+        value = "Aircraft1"
     }
     val text: LiveData<String> = _text
 }
