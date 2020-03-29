@@ -42,20 +42,16 @@ class HomeFragment : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addData()
-
-
     }
     override fun onResume() {
         super.onResume()
         homeViewModel = HomeViewModel()
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         menu_list.layoutManager = LinearLayoutManager(this.context!!)
         menu_list.adapter = MenuAdapter(person, this.context!!.applicationContext.applicationContext) { item:Menu -> itemClick(item) }
-
     }
 
     private fun itemClick(item: Menu){
@@ -67,20 +63,15 @@ class HomeFragment : Fragment(){
         }
         else if (item.nameMenuEng.equals(resources.getStringArray(R.array.menu_eng)[1])) {
             addFragment(TroubleFragment(),true,"trouble")
-
         }
         else if (item.nameMenuEng.equals(resources.getStringArray(R.array.menu_eng)[2])){
             addFragment(ReplaceFragment(),true,"trouble")
-
         }
         else if (item.nameMenuEng.equals(resources.getStringArray(R.array.menu_eng)[3])){
             addFragment(RemarkFragment(),true,"trouble")
-
         }
-
         else{
             addFragment(HomeFragment(),true,"home")
-
         }
         Toast.makeText(this.context,"Click ${item.nameMenuEng}",Toast.LENGTH_SHORT).show()
     }

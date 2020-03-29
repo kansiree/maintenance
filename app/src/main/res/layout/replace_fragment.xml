@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ReplaceFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <data>
+        <variable
+            name="model"
+            type="com.example.maintenance.data.model.ReplaceModel" />
+    </data>
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        tools:context=".ReplaceFragment">
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_replace">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_replace"
+                style="@style/headText"
+                android:text="Replace">
+
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_replace"
+                android:layout_toRightOf="@+id/txt_replace"
+                style="@style/editText"
+                android:hint=" replace "
+                android:text="@{model.replace}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_name"
+            android:layout_below="@+id/layout_replace">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_name"
+                style="@style/headText"
+                android:text="Name">
+
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_name"
+                android:layout_toRightOf="@+id/txt_name"
+                style="@style/editText"
+                android:hint=" name "
+                android:maxLength="30"
+                android:text="@{model.name}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_part_number"
+            android:layout_below="@+id/layout_name">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_path_number"
+                style="@style/headText"
+                android:text="Path Number">
+
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_path_number"
+                android:layout_toRightOf="@+id/txt_path_number"
+                style="@style/editText"
+                android:hint=" path number "
+                android:maxLength="30"
+                android:text="@{model.partNumber}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_serial_number_remove"
+            android:layout_below="@+id/layout_part_number">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_serial_number_remove"
+                style="@style/headText"
+                android:text="Serial Number Remove">
+
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_serial_number_remove"
+                android:layout_toRightOf="@+id/txt_serial_number_remove"
+                style="@style/editText"
+                android:hint=" serial number remove "
+                android:maxLength="30"
+                android:text="@{model.serialNumberRemove}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_serial_number_install"
+            android:layout_below="@+id/layout_serial_number_remove">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_serial_number_install"
+                style="@style/headText"
+                android:text="Serial Number Install">
+
+            </TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_serial_number_install"
+                android:layout_toRightOf="@+id/txt_serial_number_install"
+                style="@style/editText"
+                android:hint=" serial number install "
+                android:maxLength="30"
+                android:text="@{model.serailNumberInstall}">
+
+            </EditText>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

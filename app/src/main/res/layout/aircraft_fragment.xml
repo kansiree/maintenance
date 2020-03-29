@@ -1,145 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AircraftFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <RelativeLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/layout_aircraft_type">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:id="@+id/txt_aircraft_type"
-           style="@style/headText"
-           android:text="Aircraft Type">
+    <data>
+        <variable
+            name="aircraft"
+            type="com.example.maintenance.data.model.AircraftModel" />
+    </data>
 
-       </TextView>
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_toRightOf="@+id/txt_aircraft_type"
-           style="@style/editText"
-           android:hint=" aircraft type ">
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AircraftFragment">
 
-       </EditText>
-   </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_aircraft_sn"
-        android:layout_below="@+id/layout_aircraft_type">
-        <TextView
+        <RelativeLayout
+            android:id="@+id/layout_aircraft_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_aircraft_type"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aircraft Type">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_aircraft_type"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_aircraft_type"
+                android:hint=" aircraft type "
+                android:text="@{aircraft.aircraftType}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_aircraft_sn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_aircraft_sn"
-            style="@style/headText"
-            android:text="Aircraft S/N">
+            android:layout_below="@+id/layout_aircraft_type">
 
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_aircraft_sn"
-            style="@style/editText"
-            android:hint=" Aircraft S/N ">
+            <TextView
+                android:id="@+id/txt_aircraft_sn"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aircraft S/N">
 
-        </EditText>
-    </RelativeLayout>
+            </TextView>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_system"
-        android:layout_below="@+id/layout_aircraft_sn">
-        <TextView
+            <EditText
+                android:id="@+id/edit_aircraft_sn"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_aircraft_sn"
+                android:hint=" Aircraft S/N "
+                android:text="@{aircraft.aircraftSN}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_system"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_system"
-            style="@style/headText"
-            android:text="System">
+            android:layout_below="@+id/layout_aircraft_sn">
 
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_system"
-            style="@style/editText"
-            android:hint="system">
+            <TextView
+                android:id="@+id/txt_system"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System">
 
-        </EditText>
-    </RelativeLayout>
+            </TextView>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_pilot_one"
-        android:layout_below="@+id/layout_system">
-        <TextView
+            <EditText
+                android:id="@+id/edit_system"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_system"
+                android:hint="system"
+                android:text="@{aircraft.system}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_pilot_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_pilot_one"
-            style="@style/headText"
-            android:text="Pilot1">
+            android:layout_below="@+id/layout_system">
 
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_pilot_one"
-            style="@style/editText"
-            android:hint="pilot">
+            <TextView
+                android:id="@+id/txt_pilot_one"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilot1">
 
-        </EditText>
-    </RelativeLayout>
+            </TextView>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_pilot_two"
-        android:layout_below="@+id/layout_pilot_one">
-        <TextView
+            <EditText
+                android:id="@+id/edit_pilot_one"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_pilot_one"
+                android:hint="pilot"
+                android:text="@{aircraft.pilotOne}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_pilot_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_pilot_two"
-            style="@style/headText"
-            android:text="Pilot2">
+            android:layout_below="@+id/layout_pilot_one">
 
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_pilot_two"
-            style="@style/editText"
-            android:hint="pilot">
+            <TextView
+                android:id="@+id/txt_pilot_two"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilot2">
 
-        </EditText>
-    </RelativeLayout>
+            </TextView>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_pilot_recorder"
-        android:layout_below="@+id/layout_pilot_two">
-        <TextView
+            <EditText
+                android:id="@+id/edit_pilot_two"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_pilot_two"
+                android:hint="pilot"
+                android:text="@{aircraft.pilotTwo}">
+
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_recorder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_pilot_recorder"
-            style="@style/headText"
-            android:text="Recorder">
+            android:layout_below="@+id/layout_pilot_two">
 
-        </TextView>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_pilot_recorder"
-            style="@style/editText"
-            android:hint="recorder">
+            <TextView
+                android:id="@+id/txt_recorder"
+                style="@style/headText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recorder">
 
-        </EditText>
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_recorder"
+                style="@style/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_recorder"
+                android:hint="recorder"
+                android:text="@{aircraft.recorder}">
+
+            </EditText>
+        </RelativeLayout>
+
     </RelativeLayout>
 
-</RelativeLayout>
+</layout>
