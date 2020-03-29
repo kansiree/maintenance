@@ -12,38 +12,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@drawable/back_groud_item"
+        android:orientation="horizontal"
         android:weightSum="10">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:id="@+id/menu_img"
-                android:layout_height="100dp"
-                android:layout_weight="2"
+        <ImageView
+            android:id="@+id/menu_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="2"
 
-                ></ImageView>
-
+            ></ImageView>
 
 
         <RelativeLayout
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
             android:layout_weight="8"
 
             >
+
             <TextView
                 android:id="@+id/menu_eng_txt"
                 style="@style/headText"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
 
-                android:text="@{menu.nameMenuEng}"
-                >
+                android:text="@{menu.nameMenuEng}">
 
             </TextView>
+
             <TextView
                 android:id="@+id/menu_th_txt"
                 style="@style/headText"
