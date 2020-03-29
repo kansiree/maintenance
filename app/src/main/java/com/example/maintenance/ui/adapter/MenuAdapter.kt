@@ -40,9 +40,10 @@ class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     val Tag:String = "MenuViewHolder"
 
     fun bind(data:Menu,clickListener: (Menu) -> Unit){
-        Log.println(Log.DEBUG, Tag,"data ${ data.nameMenu }" )
+        Log.println(Log.DEBUG, Tag,"data ${ data.nameMenuEng }" )
         itemView.setOnClickListener{clickListener(data)}
-        itemView.menu_txt.text = data.nameMenu
+        itemView.menu_eng_txt.text = data.nameMenuEng
+        itemView.menu_th_txt.text = data.nameMenuTH
     }
 //    val menuTxt = itemView.menu_txt
 
