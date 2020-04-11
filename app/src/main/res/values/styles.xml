@@ -23,4 +23,14 @@
         <item name="android:background">@drawable/background_edit_text</item>
     </style>
 
+    <style name="editText.short">
+        <item name="android:maxLength">@dimen/length_of_edit_text_short</item>
+    </style>
+    <style name="editText.medium">
+        <item name="android:maxLength">50</item>
+    </style>
+    <style name="editText.long">
+        <item name="android:maxLength">@dimen/length_of_edit_text_long</item>
+    </style>
+
 </resources>
