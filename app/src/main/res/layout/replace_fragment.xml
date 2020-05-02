@@ -4,7 +4,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.maintenance.data.model.ReplaceModel" />
+            type="com.example.maintenance.model.ReplaceModel" />
     </data>
     <RelativeLayout
         xmlns:tools="http://schemas.android.com/tools"

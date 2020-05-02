@@ -3,7 +3,7 @@
     <data>
         <variable
             name="trouble"
-            type="com.example.maintenance.data.model.TroubleModel" />
+            type="com.example.maintenance.model.TroubleModel" />
     </data>
     
     <RelativeLayout

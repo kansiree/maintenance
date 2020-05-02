@@ -1,10 +1,7 @@
 package com.example.maintenance.ui.home
 
 import android.content.Intent
-import com.example.maintenance.data.manager.AuthenticationManager
 import com.example.maintenance.data.model.Menu
-import com.example.maintenance.data.respository.sheets.SheetsAPIDataSource
-import com.example.maintenance.data.respository.sheets.SheetsRepository
 import com.example.maintenance.ui.base.BaseActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

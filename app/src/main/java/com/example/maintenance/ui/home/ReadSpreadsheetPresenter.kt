@@ -1,8 +1,6 @@
 package com.example.maintenance.ui.home
 
-import com.example.maintenance.data.manager.AuthenticationManager
 import com.example.maintenance.data.model.Menu
-import com.example.maintenance.data.respository.sheets.SheetsRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer

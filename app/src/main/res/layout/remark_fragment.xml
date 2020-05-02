@@ -4,7 +4,7 @@
     <data>
         <variable
             name="remark"
-            type="com.example.maintenance.data.model.RemarkModel" />
+            type="com.example.maintenance.model.RemarkModel" />
     </data>
 
 <RelativeLayout  xmlns:tools="http://schemas.android.com/tools"

@@ -53,13 +53,12 @@ class AircraftFragment : Fragment() {
 
             override fun onNothingSelected(parent: AdapterView<*>) {
 //                Toast.makeText(context, itemAircraft.aircraftItem.toString(), Toast.LENGTH_SHORT).show()
-                // write code to perform some action
-            }
+                /* write code to perform some action*/ }
         }
 
         var apiInterface = APIClient.client.create(ApiInterface::class.java)
 
-        val call = apiInterface.getAircraft()
+        val call = apiInterface.getAircraft(ConfigApplication.API_KEY,"COLUMNS")
         call.enqueue(object : Callback<AircraftObject> {
             override fun onResponse(call: Call<AircraftObject>, response: Response<AircraftObject>) {
                 Log.d("Success!", response.toString())
@@ -76,7 +75,7 @@ class AircraftFragment : Fragment() {
     }
 
     private  fun setUpSpinner(view: Spinner,listData:List<String>){
-        view.adapter = ArrayAdapter(this!!.context!!, R.layout.support_simple_spinner_dropdown_item, listData)
+        view.adapter = ArrayAdapter(this!!.requireContext(), R.layout.support_simple_spinner_dropdown_item, listData)
     }
 
     private fun getItemSelect(view: Spinner):String{
