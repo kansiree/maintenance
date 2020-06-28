@@ -4,11 +4,8 @@
 
     <data>
         <variable
-            name="aircraft"
-            type="com.example.maintenance.data.model.AircraftModel" />
-        <variable
             name="aircraftViewModel"
-            type="com.example.maintenance.AircraftViewModel" />
+            type="com.example.maintenance.ui.aircraft.AircraftViewModel" />
         val position = aircraftViewModel.aircraftItemPosition.value
         aircraftViewModel.aircraftItemPosition.value = position + 1
     </data>
@@ -16,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AircraftFragment">
+        tools:context=".ui.aircraft.AircraftFragment">
 
 
         <RelativeLayout
@@ -40,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/txt_aircraft_type"
                 android:hint=" aircraft type "
-                android:text="@{aircraft.aircraftType}">
+                >
 
             </EditText>
         </RelativeLayout>
@@ -116,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/txt_pilot_one"
                 android:hint="pilot"
-                android:text="@{aircraft.pilotOne}">
+               >
 
             </EditText>
         </RelativeLayout>
@@ -143,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/txt_pilot_two"
                 android:hint="pilot"
-                android:text="@{aircraft.pilotTwo}">
+                >
 
             </EditText>
         </RelativeLayout>
@@ -170,11 +167,16 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/txt_recorder"
                 android:hint="recorder"
-                android:text="@{aircraft.recorder}">
+                >
 
             </EditText>
         </RelativeLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
     </RelativeLayout>

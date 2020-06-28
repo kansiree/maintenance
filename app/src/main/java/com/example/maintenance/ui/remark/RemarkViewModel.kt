@@ -1,4 +1,4 @@
-package com.example.maintenance
+package com.example.maintenance.ui.remark
 
 import androidx.lifecycle.ViewModel
 

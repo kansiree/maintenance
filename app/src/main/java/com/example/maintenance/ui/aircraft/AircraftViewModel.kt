@@ -1,4 +1,4 @@
-package com.example.maintenance
+package com.example.maintenance.ui.aircraft
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

@@ -1,14 +1,11 @@
 package com.example.maintenance.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.maintenance.R
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.example.maintenance.data.repository.AircraftRepository
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel (application: Application) : AndroidViewModel(application) {
+    private var repository:AircraftRepository = AircraftRepository(application)
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Aircraft1"
-    }
-    val text: LiveData<String> = _text
+
 }

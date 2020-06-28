@@ -8,7 +8,7 @@
     </data>
 
 <RelativeLayout  xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RemarkFragment"
+    tools:context=".ui.remark.RemarkFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

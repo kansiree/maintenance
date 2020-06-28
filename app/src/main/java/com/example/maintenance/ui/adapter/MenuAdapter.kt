@@ -1,8 +1,6 @@
 package com.example.maintenance.ui.adapter
 
 import android.content.Context
-import android.net.TrafficStats
-import android.opengl.GLSurfaceView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +14,7 @@ import kotlinx.coroutines.DEBUG_PROPERTY_NAME
 import java.util.zip.InflaterOutputStream
 
 
-class MenuAdapter(val item:ArrayList<Menu>, val context: Context,val clickListener: (Menu) ->  Unit) : RecyclerView.Adapter<MenuViewHolder>() {
+class MenuAdapter(val item:ArrayList<Menu>, val context: Context, val clickListener: (Menu) ->  Unit) : RecyclerView.Adapter<MenuViewHolder>() {
 val Tag:String = "MenuAdapter"
      override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         return MenuViewHolder(LayoutInflater.from(context).inflate(layout.main_menu_list_item,parent,false))

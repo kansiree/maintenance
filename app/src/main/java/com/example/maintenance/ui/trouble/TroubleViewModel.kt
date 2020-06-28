@@ -1,4 +1,4 @@
-package com.example.maintenance
+package com.example.maintenance.ui.trouble
 
 import androidx.lifecycle.ViewModel
 

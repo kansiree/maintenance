@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-data class  AircraftObject(@SerializedName("range") var range:String,@SerializedName("majorDimension") var majorDimension:String, @SerializedName("values") var value:ArrayList<ArrayList<String>>)
 
 data class AircraftModel(var aircraftType: String,
                          var system: String,
@@ -31,7 +30,7 @@ internal object APIClient{
 
 
             retrofit = Retrofit.Builder()
-                .baseUrl("https://sheets.googleapis.com/v4/spreadsheets/")
+                .baseUrl("https://hidden-harbor-84295.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
