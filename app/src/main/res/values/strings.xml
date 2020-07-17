@@ -3,7 +3,7 @@
     <string name="title_home">Add</string>
     <string name="title_dashboard">Report</string>
     <string name="title_notifications">Edit</string>
-<!--    list menu   -->
+    <!--    list menu   -->
     <string-array name="menu_eng">
         <item>aircraft</item>
         <item>trouble</item>
@@ -16,7 +16,8 @@
         <item>การเปลี่ยนอุปกรณ์</item>
         <item>บันทึกเพิ่มเติม</item>
     </string-array>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

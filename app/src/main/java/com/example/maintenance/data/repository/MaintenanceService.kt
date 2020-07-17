@@ -5,7 +5,7 @@ import com.example.maintenance.data.model.responseapi.MasterResponse
 import retrofit2.http.GET
 
 interface MaintenanceService {
-        @GET("getMasterSystem")
+        @GET("getMasterAircraft")
         fun getAircraft(): Call<List<MasterResponse>>
 
 }

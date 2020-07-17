@@ -32,23 +32,38 @@ class HomeFragment : Fragment(){
     ): View? {
         homeViewModel = HomeViewModel(this.requireContext().applicationContext.applicationContext as Application)
          root = inflater.inflate(R.layout.fragment_home, container, false)
-
+        Log.d(
+            "HomeFragment",
+            "onCreate: " + if (savedInstanceState == null) "Null" else "not Null"
+        )
         return root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(
+            "HomeFragment",
+            "onCreate: " + if (savedInstanceState == null) "Null" else "not Null"
+        )
         addData()
     }
     override fun onResume() {
         super.onResume()
-//        homeViewModel = HomeViewModel(context as Application)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-      menu_list.layoutManager = LinearLayoutManager(this.requireContext())
-        menu_list.adapter = MenuAdapter(person, this.requireContext().applicationContext.applicationContext) { item:Menu -> itemClick(item) }
+        Log.d(
+            "HomeFragment",
+            "onCreate: " + if (savedInstanceState == null) "Null" else "not Null"
+        )
+        if(savedInstanceState == null){
+
+        }
+        menu_list.layoutManager = LinearLayoutManager(this.requireContext())
+        menu_list.adapter = MenuAdapter(person, this.requireContext().applicationContext.applicationContext) {
+                item:Menu -> itemClick(item) }
     }
 
     private fun itemClick(item: Menu){
@@ -83,6 +98,10 @@ class HomeFragment : Fragment(){
     }
 
     private fun addFragment(fragment: Fragment, addToBackStack: Boolean, tag: String) {
+        Log.d(
+            "HomeFragment",
+            "onCreate: " + if (context == null) "Null" else "not Null"
+        )
         val manager = parentFragmentManager
         val ft = manager.beginTransaction()
 

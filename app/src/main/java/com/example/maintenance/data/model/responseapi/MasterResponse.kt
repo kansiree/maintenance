@@ -2,11 +2,11 @@ package com.example.maintenance.data.model.responseapi
 
 import com.google.gson.annotations.SerializedName
 
-class MasterResponse {
+data class MasterResponse (
     @SerializedName("id")
-    var id: String? = null
+    val id: Int = 0,
     @SerializedName("full_name")
-    var fullName:String? = null
+    val fullName:String = "",
     @SerializedName("create_date")
-    var createDate:String? = null
-}
+    val createDate:String = ""
+)

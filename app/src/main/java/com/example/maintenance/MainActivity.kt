@@ -1,6 +1,10 @@
 package com.example.maintenance
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -22,8 +26,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
+        Log.d(
+            "MainActivity",
+            "onCreate: " + if (savedInstanceState == null) "Null" else "not Null"
+        )
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
+
     }
+
+
 }
