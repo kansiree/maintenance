@@ -7,11 +7,29 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.maintenance.R
+import com.example.maintenance.data.database.entity.MasterAircraft
+import com.example.maintenance.data.database.entity.MasterSystem
+import com.example.maintenance.data.model.Master
 import com.example.maintenance.data.model.responseapi.MasterResponse
+import io.reactivex.internal.functions.Functions
 
-class CustomDropdown(val context: Context, var dataSource: List<MasterResponse>): BaseAdapter() {
+
+class CustomDropdown(val context: Context, val dataSource: List<Master>): BaseAdapter() {
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
+
+//    init {
+//        if (dataSource1 is List<*>) {
+//            dataSource = dataSource1.filterIsInstance<Master>()
+//
+//        }
+//        for ( item  in dataSource1) {
+//            Master(item.id)
+//            dataSource.add(item as Master)
+//            println(item.full_name)
+//            // body of loop
+//        }
+//    }
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val view: View
@@ -24,7 +42,7 @@ class CustomDropdown(val context: Context, var dataSource: List<MasterResponse>)
             view = convertView
             vh = view.tag as ItemHolder
         }
-        vh.label.text = dataSource.get(position).fullName
+        vh.label.text = dataSource.get(position).full_name
 
         return view
     }
@@ -49,3 +67,7 @@ class CustomDropdown(val context: Context, var dataSource: List<MasterResponse>)
         }
     }
 }
+
+
+
+

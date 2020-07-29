@@ -10,15 +10,16 @@ data class MasterAircraft (
     @ColumnInfo(name = "full_name") val full_name: String?,
     @ColumnInfo(name = "create_date") val createDate: String?)
 
-
 @Entity(tableName = "master_system")
 data class MasterSystem(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "full_name") val full_name: String?)
+    @ColumnInfo(name = "full_name") val full_name: String?,
+    @ColumnInfo(name = "create_date") val createDate: String?)
 
 
 @Entity(tableName = "master_technical_order")
 data class MasterTecOrder (
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "full_name") val full_name: String?)
+    @ColumnInfo(name = "full_name") val full_name: String?,
+    @ColumnInfo(name = "create_date") val createDate: String?)
 

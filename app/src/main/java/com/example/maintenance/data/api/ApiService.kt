@@ -7,4 +7,10 @@ import retrofit2.http.GET
 interface ApiService {
     @GET("getMasterAircraft")
     suspend fun getAircraft(): List<MasterResponse>
+
+    @GET("getMasterSystem")
+    suspend fun getMasterSystem(): List<MasterResponse>
+
+    @GET("getMasterTechnicalOrder")
+    suspend fun getMasterTechnicalOrder(): List<MasterResponse>
 }

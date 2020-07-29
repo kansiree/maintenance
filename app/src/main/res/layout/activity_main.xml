@@ -9,18 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="@string/app_name">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/download"
-                android:text="load"
-                android:layout_alignParentRight="true">
 
-            </Button>
-        </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,6 +30,7 @@
             android:layout_above="@+id/nav_view"
             app:defaultNavHost="true"
             app:navGraph="@navigation/mobile_navigation" />
+
     </RelativeLayout>
 
 

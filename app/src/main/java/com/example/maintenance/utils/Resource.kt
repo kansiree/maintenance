@@ -1,7 +1,5 @@
 package com.example.maintenance.utils
 
-import com.example.maintenance.data.database.entity.MasterSystem
-
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {
