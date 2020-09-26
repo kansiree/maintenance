@@ -28,7 +28,7 @@ object DatabaseBuilder {
             context.applicationContext,
             AppDatabase::class.java,
             DATABASE_NAME
-        ).build()
+        ).fallbackToDestructiveMigration().build()
 
     private fun initDatabase(context: Context, databaseName: String) {
         val dbPath = context.getDatabasePath(databaseName)

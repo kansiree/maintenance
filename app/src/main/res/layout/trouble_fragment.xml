@@ -1,90 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="trouble"
             type="com.example.maintenance.model.TroubleModel" />
     </data>
-    
-    <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.trouble.TroubleFragment">
-
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_trouble">
-            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.trouble.TroubleFragment">
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progressBar_trouble"
+                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_trouble"
-                style="@style/headText"
-                android:text="Trouble">
+                android:layout_centerInParent="true">
 
-            </TextView>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/edit_trouble"
-                android:layout_toRightOf="@+id/txt_trouble"
-                style="@style/editText"
-                android:hint=" trouble "
-                android:text="@{trouble.trouble}">
-
-            </EditText>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_technical_order"
-            android:layout_below="@+id/layout_trouble">
-            <TextView
+            </androidx.core.widget.ContentLoadingProgressBar>
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_technical_order"
-                style="@style/headText"
-                android:text="Technical Order">
+                android:id="@+id/layout_trouble">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_trouble"
+                    style="@style/headText"
+                    android:text="Trouble">
 
-            </TextView>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/edit_technical_order"
-                android:layout_toRightOf="@+id/txt_technical_order"
-                style="@style/editText"
-                android:hint=" technical order "
-                android:text="@{trouble.technicalOrder}">
+                </TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_trouble"
+                    android:layout_toRightOf="@+id/txt_trouble"
+                    style="@style/editText"
+                    android:hint=" trouble "
+                    android:text="@{trouble.trouble}">
 
-            </EditText>
-        </RelativeLayout>
+                </EditText>
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_trouble_shooting"
-            android:layout_below="@+id/layout_technical_order">
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_trouble_shooting"
-                style="@style/headText"
-                android:text="Trouble Shooting">
+                android:id="@+id/layout_technical_order"
+                android:layout_below="@+id/layout_trouble">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_technical_order"
+                    style="@style/headText"
+                    android:text="Technical Order">
 
-            </TextView>
-            <EditText
-                android:layout_width="match_parent"
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/spinner_technical_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/txt_technical_order"
+                    style="@style/editText"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_trouble_shooting"
-                android:layout_toRightOf="@+id/txt_trouble_shooting"
-                style="@style/editText"
-                android:hint=" Trouble Shooting "
-                android:text="@{trouble.troubleShooting}">
+                android:id="@+id/layout_trouble_shooting"
+                android:layout_below="@+id/layout_technical_order">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_trouble_shooting"
+                    style="@style/headText"
+                    android:text="Trouble Shooting">
 
-            </EditText>
+                </TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit_trouble_shooting"
+                    android:layout_toRightOf="@+id/txt_trouble_shooting"
+                    style="@style/editText"
+                    android:hint=" Trouble Shooting "
+                    android:text="@{trouble.troubleShooting}">
+
+                </EditText>
+            </RelativeLayout>
+
         </RelativeLayout>
 
-    </RelativeLayout>
 </layout>

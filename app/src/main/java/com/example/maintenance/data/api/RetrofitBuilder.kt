@@ -12,8 +12,8 @@ object RetrofitBuilder {
 
     var okHttpClient: OkHttpClient? = OkHttpClient.Builder()
         .connectTimeout(1, TimeUnit.MINUTES)
-        .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(15, TimeUnit.SECONDS)
+        .readTimeout(1, TimeUnit.MINUTES)
+        .writeTimeout(1, TimeUnit.MINUTES)
         .build()
 
     private fun getRetrofit() :Retrofit{

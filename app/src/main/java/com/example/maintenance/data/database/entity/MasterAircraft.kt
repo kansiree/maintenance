@@ -8,18 +8,18 @@ import androidx.room.PrimaryKey
 data class MasterAircraft (
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "full_name") val full_name: String?,
-    @ColumnInfo(name = "create_date") val createDate: String?)
+    @ColumnInfo(name = "created_date") val createDate: String?)
 
 @Entity(tableName = "master_system")
 data class MasterSystem(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "full_name") val full_name: String?,
-    @ColumnInfo(name = "create_date") val createDate: String?)
+    @ColumnInfo(name = "created_date") val createDate: String?)
 
 
 @Entity(tableName = "master_technical_order")
 data class MasterTecOrder (
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "full_name") val full_name: String?,
-    @ColumnInfo(name = "create_date") val createDate: String?)
+    @ColumnInfo(name = "created_date") val createDate: String?)
 

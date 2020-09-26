@@ -21,9 +21,9 @@ class RoomDBViewModel(
 ):ViewModel() {
 
     private val TAG :String = "RoomDBViewModel"
-    private val masters = MutableLiveData<Resource<List<MasterAircraft>>>()
-    private val masters1 = MutableLiveData<Resource<List<MasterSystem>>>()
-    private val masters2 = MutableLiveData<Resource<List<MasterTecOrder>>>()
+    private val masterAircraft = MutableLiveData<Resource<List<MasterAircraft>>>()
+    private val masterSystem = MutableLiveData<Resource<List<MasterSystem>>>()
+    private val masterTechOrder = MutableLiveData<Resource<List<MasterTecOrder>>>()
 
     private val response = MutableLiveData<Resource<Status>>()
 
@@ -31,10 +31,12 @@ class RoomDBViewModel(
         fetchMasterSystem()
     }
 
-    fun fetchMasterSystem(){
+    private fun fetchMasterSystem(){
         response.postValue(Resource.loading(null))
         viewModelScope.launch {
          try {
+             Log.i(TAG,"insertMaster")
+
              dbHelper.deleteMaster()
              insertMasterAircraft()
              insertMasterSystem()
@@ -42,9 +44,12 @@ class RoomDBViewModel(
              response.postValue(Resource.success(null))
 
             } catch (e: Exception) {
-                Log.e("Room",e.printStackTrace().toString())
+                Log.e(TAG,e.printStackTrace().toString())
              response.postValue(Resource.error(e.toString(),null))
-            }
+            }finally {
+             Log.i(TAG,"insert master success")
+
+         }
 
         }
 
@@ -55,27 +60,28 @@ class RoomDBViewModel(
     }
 
     fun getMasterAircraft(): LiveData<Resource<List<MasterAircraft>>>{
-        return masters
+        return masterAircraft
     }
 
     fun getMasterSystem(): LiveData<Resource<List<MasterSystem>>>{
-        return masters1
+        return masterSystem
     }
 
     fun getMasterTechnicalOrder(): LiveData<Resource<List<MasterTecOrder>>>{
-        return masters2
+        return masterTechOrder
     }
     
     private suspend fun insertMasterAircraft(){
-        masters.postValue(Resource.loading(null))
         try {
+            masterAircraft.postValue(Resource.loading(null))
             val usersFromDb = dbHelper.getMasterAircraft()
+            Log.i(TAG,"insertMasterAircraft")
 
             if (usersFromDb.isEmpty()) {
                 val systemFromApi = apiHelper.getMasterAircraft()
                 val systemToInsertInDB = mutableListOf<MasterAircraft>()
 
-                for(apiSystem in systemFromApi){
+                for(apiSystem in systemFromApi[0].message){
                     val system = MasterAircraft(
                         apiSystem.id,
                         apiSystem.fullName,
@@ -84,10 +90,10 @@ class RoomDBViewModel(
                     systemToInsertInDB.add(system)
                 }
                 dbHelper.insertMaster(systemToInsertInDB)
-                masters.postValue(Resource.success(systemToInsertInDB))
+                masterAircraft.postValue(Resource.success(systemToInsertInDB))
 
             } else {
-                masters.postValue(Resource.success(usersFromDb))
+                masterAircraft.postValue(Resource.success(usersFromDb))
             }
         }catch (e:Exception){
             throw e
@@ -96,13 +102,15 @@ class RoomDBViewModel(
     
     private suspend fun insertMasterSystem(){
         try {
-            masters1.postValue(Resource.loading(null))
+            masterSystem.postValue(Resource.loading(null))
             val usersFromDb1 = dbHelper.getMasterSystem()
+            Log.i(TAG,"insertMasterSystem")
+
             if (usersFromDb1.isEmpty()) {
                 val systemFromApi = apiHelper.getMasterSystem()
                 val systemToInsertInDB = mutableListOf<MasterSystem>()
 
-                for(apiSystem in systemFromApi){
+                for(apiSystem in systemFromApi[0].message){
                     val system = MasterSystem(
                         apiSystem.id,
                         apiSystem.fullName,
@@ -111,10 +119,10 @@ class RoomDBViewModel(
                     systemToInsertInDB.add(system)
                 }
                 dbHelper.insertMasterSystem(systemToInsertInDB)
-                masters1.postValue(Resource.success(systemToInsertInDB))
+                masterSystem.postValue(Resource.success(systemToInsertInDB))
 
             } else {
-                masters1.postValue(Resource.success(usersFromDb1))
+                masterSystem.postValue(Resource.success(usersFromDb1))
             }
         }catch (e:Exception){
             throw e
@@ -124,13 +132,15 @@ class RoomDBViewModel(
   
     private suspend fun insertMasterTechnical(){
         try {
-            masters2.postValue(Resource.loading(null))
+            masterTechOrder.postValue(Resource.loading(null))
             val usersFromDb2 = dbHelper.getMasterTechnicalOrder()
+            Log.i(TAG,"insertMasterTechnical")
+
             if (usersFromDb2.isEmpty()) {
                 val systemFromApi = apiHelper.getMasterTechnicalOrder()
                 val systemToInsertInDB = mutableListOf<MasterTecOrder>()
 
-                for(apiSystem in systemFromApi){
+                for(apiSystem in systemFromApi[0].message){
                     systemToInsertInDB.add(
                         MasterTecOrder(
                             apiSystem.id,
@@ -140,10 +150,10 @@ class RoomDBViewModel(
                     )
                 }
                 dbHelper.insertTechnicalOrder(systemToInsertInDB)
-                masters2.postValue(Resource.success(systemToInsertInDB))
+                masterTechOrder.postValue(Resource.success(systemToInsertInDB))
 
             } else {
-                masters2.postValue(Resource.success(usersFromDb2))
+                masterTechOrder.postValue(Resource.success(usersFromDb2))
             }
         }catch (e:Exception){
             throw e

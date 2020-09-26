@@ -9,7 +9,7 @@ import com.example.maintenance.data.database.entity.*
     entities = [MasterAircraft::class,
         MasterSystem::class,
         MasterTecOrder::class,
-        Detail::class], version = 1, exportSchema = true
+        Detail::class], version = 2, exportSchema = true
 )
 abstract class AppDatabase  : RoomDatabase() {
     abstract fun aircraftDao(): MasterDao
