@@ -6,11 +6,11 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("getMasterAircraft")
-    suspend fun getAircraft(): List<MasterResponse>
+    suspend fun getAircraft(): MasterResponse
 
     @GET("getMasterSystem")
-    suspend fun getMasterSystem(): List<MasterResponse>
+    suspend fun getMasterSystem(): MasterResponse
 
     @GET("getMasterTechnicalOrder")
-    suspend fun getMasterTechnicalOrder(): List<MasterResponse>
+    suspend fun getMasterTechnicalOrder(): MasterResponse
 }

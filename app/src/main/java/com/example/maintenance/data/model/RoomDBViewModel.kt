@@ -81,7 +81,7 @@ class RoomDBViewModel(
                 val systemFromApi = apiHelper.getMasterAircraft()
                 val systemToInsertInDB = mutableListOf<MasterAircraft>()
 
-                for(apiSystem in systemFromApi[0].message){
+                for(apiSystem in systemFromApi.message){
                     val system = MasterAircraft(
                         apiSystem.id,
                         apiSystem.fullName,
@@ -110,7 +110,7 @@ class RoomDBViewModel(
                 val systemFromApi = apiHelper.getMasterSystem()
                 val systemToInsertInDB = mutableListOf<MasterSystem>()
 
-                for(apiSystem in systemFromApi[0].message){
+                for(apiSystem in systemFromApi.message){
                     val system = MasterSystem(
                         apiSystem.id,
                         apiSystem.fullName,
@@ -140,7 +140,7 @@ class RoomDBViewModel(
                 val systemFromApi = apiHelper.getMasterTechnicalOrder()
                 val systemToInsertInDB = mutableListOf<MasterTecOrder>()
 
-                for(apiSystem in systemFromApi[0].message){
+                for(apiSystem in systemFromApi.message){
                     systemToInsertInDB.add(
                         MasterTecOrder(
                             apiSystem.id,
